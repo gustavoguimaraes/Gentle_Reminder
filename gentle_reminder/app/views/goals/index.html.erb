@@ -1,6 +1,6 @@
 
 <div class = "row">
-  <div class= "col-md-6">
+  <div class= "col-md-5 col-md-offset-1">
       <h1 class ="heavy"> MY GOALS</h1>
       <h3><%= link_to "Create a goal now!", new_user_goal_path %></h3>
   </div>
@@ -11,17 +11,14 @@
     <ul>
         <li><h3>Goal Title: <%= goal_hash[:goal_key].name %></h3></li>
         
-        <h3>Finish Date</h3>
-          <li><h3 class = "turnpike">Finish Date: <%= goal_hash[:date] %></h3></li>
+        <h3>Finish Date:</h3>
+          <li><h3 class = "turnpike"><%= goal_hash[:date] %></h3></li>
         
-        <h3>Repo Name</h3>
-          <li><h3 class = "turnpike">Repo Name: <%= goal_hash[:goal_key].repo%></h3> </li>
+        <h3>Repo Name:</h3>
+          <li><h3 class = "turnpike"><%= goal_hash[:goal_key].repo%></h3> </li>
         
-        <h3>Total Commits</h3>
-          <li><h3 class = "turnpike">My Commits: <%= goal_hash[:goal_key].commitments %></h3></li>
-      	
-        <h3>Commits This Week</h3>
-          <li><h3 class = "turnpike"> Past week commits: <%= @weekly_commits%></h3> </li>
+        <h3>Commits Towards Goal:</h3>
+          <li><h3 class = "turnpike"> <%= @weekly_commits%></h3> </li>
     </ul>
   </br></br>
       <% end %>
